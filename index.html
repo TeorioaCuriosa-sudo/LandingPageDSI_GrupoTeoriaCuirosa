@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DS Crédito – Encontre a sua Solução de Crédito</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="assets/logos/LOGO-01 (2).png"/>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <!-- DS Crédito logo -->
+    <div class="header__ds-badge">
+      <a href="#">
+        <img src="assets/logos/LOGO-01 (2).png" alt="DS Crédito" class="logo-ds-img">
+      </a>
+    </div>
+    <!-- TeoriaCuriosa logo -->
+    <div class="header__tc-text">
+      <a href="https://teoriacuriosa.pt/" target="_blank">
+        <img src="assets/logos/Logos_Teoriacuriosa_v2-21.png" alt="TeoriaCuriosa" class="logo-tc-img logo-tc-white">
+        <img src="assets/logos/logo-grupo.png" alt="TeoriaCuriosa" class="logo-tc-img logo-tc-dark">
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ SLIDER (hero + landscape replacement) ═══════════════ -->
+<div class="slider" id="slider">
+  <!-- Slide 1 -->
+  <div class="slide active" style="background-image:url('assets/modern-cliffside-villa.jpg.jpeg')"></div>
+  <!-- Slide 2 -->
+  <div class="slide" style="background-image:url('assets/modern-white-building-with-balcony-clear-sky.jpg.jpeg')"></div>
+  <!-- Slide 3 -->
+  <div class="slide" style="background-image:url('assets/person-holds-small-wooden-house-their-hands (1).jpg.jpeg')"></div>
+  <!-- Hero text -->
+  <div class="hero-overlay">
+    <h1>Encontre a sua Solução de Crédito</h1>
+    <p>Conheça a nossa rede nacional de lojas DS integradas no Grupo TeoriaCuriosa, prontas para o ajudar em crédito habitação, pessoal e outras soluções financeiras.</p>
+    <a href="#finder" class="btn-cta">Encontrar loja</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="slider-dots" id="sliderDots">
+    <button class="dot active" onclick="goSlide(0)"></button>
+    <button class="dot" onclick="goSlide(1)"></button>
+    <button class="dot" onclick="goSlide(2)"></button>
+  </div>
+</div>
+
+<!-- ══ FINDER ══════════════════════════════════════════════ -->
+<section class="finder" id="finder">
+  <h2>Encontrar uma loja perto de mim</h2>
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.5">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Pesquisar por distrito…" oninput="filterStores()"/>
+  </div>
+  <div class="finder-grid">
+    <div class="store-list" id="storeList"></div>
+    <div class="map-panel">
+      <div id="pt-map">
+        <img src="assets/1.png" alt="Mapa Portugal" style="width:100%;height:auto;display:block;">
+      </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-left">
+      <!-- DS Crédito logo -->
+      <div class="footer-ds-badge">
+        <img src="assets/logos/LOGO-01 (2).png" alt="DS Crédito" class="logo-ds-img footer-logo-ds">
+      </div>
+      <!-- DS socials -->
+      <div class="social-row ds-social-row">
+        <a href="https://www.instagram.com/dsic.teoriacuriosa/" target="_blank" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/dsicteoriacuriosa" target="_blank" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <!-- TeoriaCuriosa logo -->
+      <div class="tc-logo"><img src="assets/logos/Logos_Teoriacuriosa_v2-21.png" alt="TeoriaCuriosa" class="logo-tc-img footer-logo-tc"></div>
+      <div class="social-row">
+        <a href="https://teoriacuriosa.pt/" target="_blank" aria-label="Website">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/grupo-teoria-curiosa/posts/?feedView=all" target="_blank" target="_blank" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/grupoteoriacuriosa/" target="_blank" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/grupoteoriacuriosa" target="_blank" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="fdiv"/>
+  <div class="footer-legal">
+    <p>TEORIACURIOSA UNIPESSOAL LDA, Intermediário de Crédito Vinculado, com o registo nº. 0004412, autorizado pelo Banco de Portugal para a prestação de serviços de consultoria e autorizado para a prestação de serviços de intermediação de crédito (Apresentação ou proposta de contratos de crédito a consumidores; Assistência a consumidores, mediante a realização de atos preparatórios ou de outros trabalhos de gestão pré-contratual relativamente a contratos de crédito que não tenham sido por si apresentados ou propostos). Contratos de crédito abrangidos: Crédito à Habitação e Crédito aos Consumidores. Mutuantes ou grupos de mutuantes com quem mantém contrato de vinculação: BANCO BPI S.A.; BANCO SANTANDER TOTTA, S.A.; CAIXA GERAL DE DEPÓSITOS, S.A.; NOVO BANCO, S.A.; BANCO CTT, S.A.; BANKINTER, SA - SUCURSAL EM PORTUGAL; ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL.; UNION DE CRÉDITOS IMOBILIÁRIOS, S.A., ESTABELECIMIENTO FINANCEIRO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL; BNI - BANCO DE NEGÓCIOS INTERNACIONAL (EUROPA), S.A.; COFIDIS; BANCO PRIMUS, SA; 321CRÉDITO, INSTITUIÇÃO FINANCEIRA DE CRÉDITO S.A; SICAM - CAIXA CENTRAL E CAIXAS DE CRÉDITO AGRÍCOLA MÚTUO. Informação verificável em <a href="https://www.bportugal.pt/intermediariocreditofar/teoriacuriosa-unipessoal-lda">https://www.bportugal.pt/intermediariocreditofar/teoriacuriosa-unipessoal-lda</a></p>
+    <br/>
+    <p>A "DS INTERMEDIÁRIOS DE CRÉDITO" é uma marca titulada pela DECISÕES E SOLUÇÕES – INTERMEDIÁRIOS DE CRÉDITO, LDA, Intermediário de Crédito Vinculado, com o registo nº. 0000926</p>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
